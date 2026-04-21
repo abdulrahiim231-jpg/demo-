@@ -140,12 +140,289 @@
     transition: 0.3s;
 }
 
-.back-to-top:hover {
-    background-color: #b8962e;
-    transform: scale(1.1);
-}
-
-        .shop-button:hover {
+        .back-to-top:hover {
+            background-color: #b8962e;
+            transform: scale(1.1);
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar-gradient {
+                padding: 12px 16px;
+            }
+            
+            .nav-link {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+            
+            .shop-button {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+            
+            .hero-overlay-card {
+                padding: 24px;
+                margin-left: 16px;
+                margin-right: 16px;
+            }
+            
+            .luxury-headline {
+                font-size: 32px;
+            }
+            
+            .story-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .story-image {
+                height: 300px;
+            }
+            
+            .story-content {
+                padding: 32px;
+            }
+            
+            .story-headline {
+                font-size: 32px;
+            }
+            
+            .prominent-name {
+                font-size: 28px;
+            }
+            
+            .process-icons {
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .process-icon {
+                min-width: 80px;
+            }
+            
+            .collection-card {
+                height: 250px;
+            }
+            
+            .bespoke-section {
+                padding: 60px 16px;
+            }
+            
+            .bespoke-content {
+                padding: 32px;
+            }
+            
+            .bespoke-headline {
+                font-size: 32px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-link {
+                font-size: 10px;
+                padding: 6px 8px;
+            }
+            
+            .shop-button {
+                font-size: 10px;
+                padding: 6px 12px;
+            }
+            
+            .luxury-headline {
+                font-size: 24px;
+            }
+            
+            .story-headline {
+                font-size: 24px;
+            }
+            
+            .prominent-name {
+                font-size: 24px;
+            }
+            
+            .process-icon {
+                min-width: 60px;
+            }
+            
+            .process-icon i {
+                font-size: 24px;
+            }
+            
+            .process-icon span {
+                font-size: 10px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .navbar-gradient {
+                padding: 8px 12px;
+            }
+            
+            .nav-link {
+                font-size: 9px;
+                padding: 4px 6px;
+            }
+            
+            .shop-button {
+                font-size: 9px;
+                padding: 4px 8px;
+            }
+            
+            .hero-overlay-card {
+                padding: 16px;
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+            
+            .luxury-headline {
+                font-size: 20px;
+            }
+            
+            .story-headline {
+                font-size: 20px;
+            }
+            
+            .prominent-name {
+                font-size: 20px;
+            }
+            
+            .story-text {
+                font-size: 14px;
+            }
+            
+            .process-icon {
+                min-width: 50px;
+            }
+            
+            .process-icon i {
+                font-size: 20px;
+            }
+            
+            .process-icon span {
+                font-size: 9px;
+            }
+            
+            .collection-card {
+                height: 200px;
+            }
+            
+            .bespoke-section {
+                padding: 40px 8px;
+            }
+            
+            .bespoke-content {
+                padding: 20px;
+            }
+            
+            .bespoke-headline {
+                font-size: 20px;
+            }
+            
+            .journey-button {
+                font-size: 12px;
+                padding: 12px 24px;
+            }
+            
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .nav-link {
+                font-size: 8px;
+                padding: 3px 5px;
+            }
+            
+            .shop-button {
+                font-size: 8px;
+                padding: 3px 6px;
+            }
+            
+            .luxury-headline {
+                font-size: 18px;
+            }
+            
+            .story-headline {
+                font-size: 18px;
+            }
+            
+            .prominent-name {
+                font-size: 18px;
+            }
+            
+            .story-text {
+                font-size: 13px;
+            }
+            
+            .process-icon i {
+                font-size: 18px;
+            }
+            
+            .process-icon span {
+                font-size: 8px;
+            }
+            
+            .journey-button {
+                font-size: 10px;
+                padding: 10px 20px;
+            }
+        }
+        
+        /* Landscape Mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .navbar-gradient {
+                padding: 8px 16px;
+            }
+            
+            .hero-overlay-card {
+                padding: 20px;
+            }
+            
+            .story-section {
+                padding: 40px 0;
+            }
+            
+            .story-container {
+                gap: 20px;
+            }
+            
+            .story-image {
+                height: 200px;
+            }
+            
+            .story-content {
+                padding: 20px;
+            }
+            
+            .bespoke-section {
+                padding: 40px 16px;
+            }
+        }
+        
+        /* Ensure perfect viewport */
+        @media (max-width: 768px) {
+            .min-h-screen {
+                min-height: 100vh;
+            }
+            
+            .story-section {
+                padding: 60px 0;
+            }
+            
+            .hero-new-bg {
+                padding: 80px 16px 40px;
+            }
+        }   .shop-button:hover {
             background: rgba(255, 215, 0, 0.9);
             color: #000000;
             transform: translateY(-3px);
@@ -432,7 +709,7 @@
             object-fit: cover;
         }
         .story-content {
-            padding: 60px;
+            padding: 50px;
             position: relative;
         }
         .story-content::before {
@@ -441,7 +718,7 @@
             top: 0;
             left: -60px;
             width: 1px;
-            height: 100%;
+            height: 90%;
             background: linear-gradient(to bottom, transparent, #FFD700);
         }
         .story-headline {
