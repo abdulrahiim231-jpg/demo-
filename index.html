@@ -147,22 +147,48 @@
         
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-            /* Navbar Mobile */
+            /* Navbar Mobile - FIXED */
             .navbar-gradient {
-                padding: 8px 12px;
+                padding: 12px 16px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .navbar-gradient .max-w-7xl {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .navbar-gradient .flex.items-center.space-x-3 {
+                flex: 0 0 auto;
+                margin-right: 16px;
+            }
+            
+            .navbar-gradient .flex.items-center.space-x-8 {
+                flex: 1 1 auto;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 8px;
                 flex-wrap: wrap;
             }
             
             .nav-link {
-                font-size: 11px;
-                padding: 6px 10px;
-                margin: 0 2px;
+                font-size: 10px;
+                padding: 4px 8px;
+                margin: 0;
+                white-space: nowrap;
             }
             
             .shop-button {
-                font-size: 11px;
-                padding: 6px 12px;
+                font-size: 10px;
+                padding: 4px 8px;
                 margin-left: 8px;
+                white-space: nowrap;
             }
             
             /* Hero Section Mobile */
