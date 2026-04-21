@@ -708,6 +708,7 @@
         
         /* MOBILE RESPONSIVE STYLES */
         @media (max-width: 768px) {
+            /* Hide desktop navbar elements */
             .navbar-gradient .flex.items-center.space-x-8 {
                 display: none !important;
             }
@@ -716,17 +717,50 @@
                 display: none !important;
             }
             
+            /* Show mobile hamburger */
             .hamburger {
                 display: flex !important;
+                position: relative;
+                z-index: 1001;
             }
             
+            /* Body reset */
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                overflow-x: hidden;
+                box-sizing: border-box;
+            }
+            
+            * {
+                box-sizing: border-box;
+            }
+            
+            /* Navbar styling */
             .navbar-gradient {
                 padding: 16px 20px;
                 z-index: 50;
+                position: fixed;
+                width: 100%;
+                box-sizing: border-box;
+                left: 0;
+                right: 0;
+                top: 0;
             }
             
             .hero-new-bg {
                 padding: 100px 20px 60px;
+                background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('img/hero.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: scroll;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                box-sizing: border-box;
             }
             
             .hero-overlay-card {
@@ -811,12 +845,15 @@
                 border-radius: 20px;
                 overflow: hidden;
                 position: relative;
+                display: block;
             }
             
             .collection-card img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                display: block;
+                border-radius: 20px;
             }
             
             .collection-overlay {
@@ -885,12 +922,15 @@
                 width: 100%;
                 border-radius: 20px;
                 overflow: hidden;
+                display: block;
             }
             
             .story-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                display: block;
+                border-radius: 20px;
             }
             
             .story-content {
@@ -1042,12 +1082,15 @@
                 height: 250px;
                 border-radius: 20px;
                 overflow: hidden;
+                display: block;
             }
             
             .bespoke-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                display: block;
+                border-radius: 20px;
             }
             
             .eyebrow-heading {
