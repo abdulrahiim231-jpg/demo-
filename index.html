@@ -70,6 +70,32 @@
             background-attachment: fixed;
         }
         
+        /* iPhone/iOS Background Fix */
+        @supports (-webkit-touch-callout: none) {
+            #hero {
+                background-size: 100% 100% !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                -webkit-background-size: 100% 100% !important;
+                -webkit-background-position: center center !important;
+                -webkit-background-repeat: no-repeat !important;
+                background-attachment: scroll !important;
+            }
+        }
+        
+        /* Mobile Background Fix */
+        @media only screen and (max-width: 768px) {
+            #hero {
+                background-size: 100% auto !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                -webkit-background-size: 100% auto !important;
+                -webkit-background-position: center center !important;
+                -webkit-background-repeat: no-repeat !important;
+                background-attachment: scroll !important;
+            }
+        }
+        
         /* Navbar */
         .navbar-gradient {
             background: rgba(255, 215, 0, 0.08);
@@ -1037,7 +1063,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-start text-white relative px-4 lg:px-8 pt-20 lg:pt-0 transition-all duration-500 bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: url('img/hero.jpeg'); -webkit-background-size: cover; -webkit-background-position: center; -webkit-background-repeat: no-repeat;" data-blur="no">
+    <section id="hero" class="min-h-screen flex items-center justify-start text-white relative px-4 lg:px-8 pt-20 lg:pt-0 transition-all duration-500 bg-cover bg-center bg-no-repeat" style="background-image: url('img/hero.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; -webkit-background-size: cover !important; -webkit-background-position: center !important; -webkit-background-repeat: no-repeat !important;" data-blur="no">
         <div class="bg-black/40 backdrop-blur-xl rounded-2xl p-6 lg:p-16 ml-0 lg:ml-16 max-w-full lg:max-w-lg mx-4 lg:mx-0 border border-yellow-500/30 shadow-2xl transition-all duration-500">
             <h1 class="text-3xl lg:text-6xl font-cinzel font-semibold tracking-[0.15em] uppercase leading-tight mb-4 lg:mb-6 text-center lg:text-left text-white transition-all duration-500">
                 TIMELESS RADIANCE
