@@ -1002,7 +1002,7 @@
                 <a href="#our-story" class="text-white/90 hover:text-yellow-400 transition-all duration-300 text-sm lg:text-base font-medium tracking-wide hover:translate-y-[-2px] font-montserrat" onclick="smoothScroll('our-story')">OUR STORY</a>
                 <a href="#bespoke-jewelry" class="text-white/90 hover:text-yellow-400 transition-all duration-300 text-sm lg:text-base font-medium tracking-wide hover:translate-y-[-2px] font-montserrat" onclick="smoothScroll('bespoke-jewelry')">BESPOKE JEWELRY</a>
                 <a href="#contact" class="text-white/90 hover:text-yellow-400 transition-all duration-300 text-sm lg:text-base font-medium tracking-wide hover:translate-y-[-2px] font-montserrat" onclick="smoothScroll('contact')">CONTACT</a>
-                <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-6 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat">SHOP NOW</button>
+                <button id="shopNow" class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-6 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat">SHOP NOW</button>
             </div>
             
             <!-- Mobile Hamburger -->
@@ -1024,15 +1024,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-start text-white relative px-4 lg:px-8 pt-20 lg:pt-0 bg-gradient-to-b from-black/60 via-black/80 to-black bg-cover bg-center bg-fixed" style="background-image: url('img/hero.jpeg')">
-        <div class="bg-black/40 backdrop-blur-xl rounded-2xl p-6 lg:p-16 ml-0 lg:ml-16 max-w-full lg:max-w-lg mx-4 lg:mx-0 border border-yellow-500/30 shadow-2xl">
-            <h1 class="text-3xl lg:text-6xl font-cinzel font-semibold tracking-[0.15em] uppercase leading-tight mb-4 lg:mb-6 text-center lg:text-left text-white">
+    <section id="hero" class="min-h-screen flex items-center justify-start text-white relative px-4 lg:px-8 pt-20 lg:pt-0 transition-all duration-500" style="background-image: url('img/hero.jpeg')" data-blur="no">
+        <div class="bg-black/40 backdrop-blur-xl rounded-2xl p-6 lg:p-16 ml-0 lg:ml-16 max-w-full lg:max-w-lg mx-4 lg:mx-0 border border-yellow-500/30 shadow-2xl transition-all duration-500">
+            <h1 class="text-3xl lg:text-6xl font-cinzel font-semibold tracking-[0.15em] uppercase leading-tight mb-4 lg:mb-6 text-center lg:text-left text-white transition-all duration-500">
                 TIMELESS RADIANCE
             </h1>
-            <p class="text-sm lg:text-lg mb-6 lg:mb-10 text-white/90 leading-relaxed text-center lg:text-left font-montserrat font-light">
+            <p class="text-sm lg:text-lg mb-6 lg:mb-10 text-white/90 leading-relaxed text-center lg:text-left font-montserrat font-light transition-all duration-500">
                 Experience the art of exquisite craftsmanship. Curated jewelry designed to celebrate your unique story with elegance and grace.
             </p>
-            <div class="text-center lg:text-left">
+            <div class="text-center lg:text-left mt-6 lg:mt-8">
                 <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg font-bold text-sm lg:text-lg uppercase tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat" onclick="smoothScroll('collections')">
                     EXPLORE THE COLLECTION
                 </button>
@@ -1047,21 +1047,21 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
                 <div class="relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl border border-yellow-500/20 group">
                     <img src="img/main1.jpeg" alt="Timeless Necklaces" class="w-full h-64 lg:h-96 object-cover transition-transform duration-600 group-hover:scale-110 brightness-90 group-hover:brightness-110">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center backdrop-blur-sm group-hover:from-black/95">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center group-hover:from-black/95">
                         <h3 class="text-lg lg:text-2xl font-cinzel font-semibold tracking-[0.15em] uppercase text-white mb-4 lg:mb-4 transition-all duration-400 group-hover:text-yellow-400 group-hover:translate-y-[-2px] text-center">Timeless Necklaces</h3>
                         <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-5 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat" onclick="toggleSelection(this)">Select Now</button>
                     </div>
                 </div>
                 <div class="relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl border border-yellow-500/20 group">
                     <img src="img/main2.jpeg" alt="Iconic Bracelets" class="w-full h-64 lg:h-96 object-cover transition-transform duration-600 group-hover:scale-110 brightness-90 group-hover:brightness-110">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center backdrop-blur-sm group-hover:from-black/95">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center group-hover:from-black/95">
                         <h3 class="text-lg lg:text-2xl font-cinzel font-semibold tracking-[0.15em] uppercase text-white mb-4 lg:mb-4 transition-all duration-400 group-hover:text-yellow-400 group-hover:translate-y-[-2px] text-center">Iconic Bracelets</h3>
                         <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-5 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat" onclick="toggleSelection(this)">Select Now</button>
                     </div>
                 </div>
                 <div class="relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl border border-yellow-500/20 group">
                     <img src="img/grid.jpeg" alt="Royal Rings" class="w-full h-64 lg:h-96 object-cover transition-transform duration-600 group-hover:scale-110 brightness-90 group-hover:brightness-110">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center backdrop-blur-sm group-hover:from-black/95">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center group-hover:from-black/95">
                         <h3 class="text-lg lg:text-2xl font-cinzel font-semibold tracking-[0.15em] uppercase text-white mb-4 lg:mb-4 transition-all duration-400 group-hover:text-yellow-400 group-hover:translate-y-[-2px] text-center">Royal Rings</h3>
                         <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-5 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat" onclick="toggleSelection(this)">Select Now</button>
                     </div>
@@ -1136,17 +1136,16 @@
                     We invite you to experience the BIJOUTINE difference. Whether you seek to begin your bespoke journey or explore our collections, our master artisans are ready to transform your vision into timeless elegance.
                 </p>
                 <div class="flex justify-center space-x-6 lg:space-x-10">
-                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
-                        <i data-lucide="map-pin" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white"></i>
-                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Visit Atelier</span>
-                    </div>
-                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
-                        <i data-lucide="phone" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white"></i>
-                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Private Consultation</span>
-                    </div>
-                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
-                        <i data-lucide="mail" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white"></i>
-                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Bespoke Inquiry</span>
+                        <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                            <i data-lucide="map-pin" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white"></i>
+                            <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Visit Atelier</span>
+                        </div>
+                        <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                            <a href="https://www.instagram.com/bijoutine" target="_blank" class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                                <i data-lucide="instagram" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white"></i>
+                                <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">@bijoutine</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1240,6 +1239,38 @@
         }
         function openWhatsApp() {
             window.open('https://wa.me/1234567890', '_blank');
+        }
+        
+        // Blur Control Function
+        function setBlur(value) {
+            const heroSection = document.getElementById('hero');
+            if (heroSection) {
+                heroSection.setAttribute('data-blur', value);
+                
+                if (value === 'no') {
+                    heroSection.classList.remove('backdrop-blur-xl');
+                    heroSection.classList.add('backdrop-blur-none');
+                } else if (value === 'yes') {
+                    heroSection.classList.remove('backdrop-blur-none');
+                    heroSection.classList.add('backdrop-blur-xl');
+                }
+                
+                // Update button states
+                const noButton = document.getElementById('blurNo');
+                const yesButton = document.getElementById('blurYes');
+                
+                if (value === 'no') {
+                    noButton.classList.add('bg-white', 'text-black');
+                    noButton.classList.remove('text-white/60', 'border-white/20');
+                    yesButton.classList.remove('bg-yellow-500/80', 'text-black');
+                    yesButton.classList.add('text-white/60', 'border-white/20');
+                } else if (value === 'yes') {
+                    noButton.classList.remove('bg-white', 'text-black');
+                    noButton.classList.add('text-white/60', 'border-white/20');
+                    yesButton.classList.add('bg-yellow-500/80', 'text-black');
+                    yesButton.classList.remove('text-white/60', 'border-white/20');
+                }
+            }
         }
         
         // Hamburger Menu Functions
