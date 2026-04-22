@@ -6,6 +6,28 @@
     <title>BIJOUTINE - Luxury Jewelry Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'cinzel': ['Cinzel', 'serif'],
+                        'cormorant': ['Cormorant Garamond', 'serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse': 'pulse 4s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s ease-in-out infinite 2s',
+                        'glow': 'glow 4s ease-in-out infinite 3s',
+                        'icon-float': 'icon-float 3s ease-in-out infinite',
+                        'button-pulse': 'button-pulse 2s ease-in-out infinite 3s',
+                        'fade-in-up': 'fade-in-up 0.8s ease forwards'
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
@@ -319,51 +341,59 @@
             
             .story-container {
                 grid-template-columns: 1fr;
-                gap: 32px;
+                gap: 24px;
                 max-width: 100%;
+                padding: 0 16px;
             }
             
             .story-image {
-                height: 200px;
+                height: 250px;
                 width: 100%;
                 border-radius: 15px;
                 overflow: hidden;
+                margin-bottom: 0;
             }
             
             .story-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                display: block;
             }
             
             .story-content {
-                padding: 24px;
+                padding: 20px;
                 text-align: center;
                 background: rgba(255, 255, 255, 0.05);
                 border-radius: 20px;
                 border: 1px solid rgba(255, 215, 0, 0.1);
+                margin-bottom: 0;
             }
             
             .story-headline {
-                font-size: 22px;
+                font-size: 20px;
                 line-height: 1.3;
-                margin-bottom: 20px;
+                margin-bottom: 16px;
+                text-align: center;
             }
             
             .story-text {
-                font-size: 15px;
+                font-size: 14px;
                 line-height: 1.6;
-                margin-bottom: 20px;
+                margin-bottom: 16px;
+                text-align: center;
             }
             
             .prominent-name {
-                font-size: 20px;
-                margin-bottom: 20px;
+                font-size: 18px;
+                margin-bottom: 16px;
+                text-align: center;
             }
             
             .story-signature {
-                font-size: 16px;
-                margin-top: 20px;
+                font-size: 14px;
+                margin-top: 16px;
+                text-align: center;
             }
             
             /* Contact section */
@@ -631,94 +661,46 @@
             }
         }
         
-        /* Collection Cards */
-        .collection-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.4s ease-in-out;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+        /* Custom Animations */
+        @keyframes float {
+            0%, 100% { transform: scale(1) translateY(0px); }
+            50% { transform: scale(1.05) translateY(-20px); }
         }
         
-        .collection-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
-            border-color: rgba(255, 215, 0, 0.5);
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
         }
         
-        .collection-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease-in-out;
-            filter: brightness(0.9);
+        @keyframes shimmer {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.4); }
         }
         
-        .collection-card:hover img {
-            transform: scale(1.15);
-            filter: brightness(1.1);
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.2); }
         }
         
-        .collection-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.3), transparent);
-            padding: 25px 20px 40px;
-            text-align: center;
-            backdrop-filter: blur(5px);
+        @keyframes icon-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
         
-        .select-button {
-            background: rgba(255, 215, 0, 0.08);
-            border: 1px solid rgba(255, 215, 0, 0.4);
-            color: #FFFFF0;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-            backdrop-filter: blur(15px);
-            margin-top: 15px;
+        @keyframes button-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
         }
         
-        .select-button:hover {
-            background: rgba(255, 215, 0, 0.2);
-            color: #000000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
-            border-color: #FFD700;
-        }
-        
-        .select-button.selected {
-            background: rgba(255, 215, 0, 0.9);
-            color: #000000;
-            border-color: #FFD700;
-        }
-        
-        .collection-title {
-            font-family: 'Cinzel', serif;
-            font-size: 26px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            color: #FFFFF0;
-            text-transform: uppercase;
-            transition: all 0.4s ease-in-out;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-            margin-bottom: 15px;
-        }
-        
-        .collection-card:hover .collection-title {
-            color: #FFD700;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.8);
-            transform: translateY(-2px);
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         /* Bespoke Section */
@@ -1007,51 +989,51 @@
             <i data-lucide="arrow-up"></i>
         </button>
     <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 navbar-gradient py-4 px-6 lg:py-6 lg:px-8">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-yellow-500/20 py-3 px-4 lg:py-4 lg:px-8">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <img src="img/lago.jpeg" alt="BIJOUTINE Logo" class="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover">
-                <h1 class="text-lg lg:text-2xl font-light tracking-wider" style="font-family: 'Montserrat', sans-serif;">BIJOUTINE</h1>
+                <h1 class="text-lg lg:text-2xl font-light tracking-wider text-white font-montserrat">BIJOUTINE</h1>
             </div>
             
             <!-- Desktop Navigation -->
-            <div class="hidden lg:flex items-center space-x-8">
-                <a href="#collections" class="nav-link" onclick="smoothScroll('collections')">COLLECTIONS</a>
-                <a href="#our-story" class="nav-link" onclick="smoothScroll('our-story')">OUR STORY</a>
-                <a href="#bespoke-jewelry" class="nav-link" onclick="smoothScroll('bespoke-jewelry')">BESPOKE JEWELRY</a>
-                <a href="#contact" class="nav-link" onclick="smoothScroll('contact')">CONTACT</a>
-                <button class="shop-button">SHOP NOW</button>
+            <div class="hidden lg:flex items-center space-x-6 lg:space-x-8">
+                <a href="#collections" class="text-white/90 hover:text-yellow-400 transition-all duration-300 text-sm lg:text-base font-medium tracking-wide hover:translate-y-[-2px] font-montserrat" onclick="smoothScroll('collections')">COLLECTIONS</a>
+                <a href="#our-story" class="text-white/90 hover:text-yellow-400 transition-all duration-300 text-sm lg:text-base font-medium tracking-wide hover:translate-y-[-2px] font-montserrat" onclick="smoothScroll('our-story')">OUR STORY</a>
+                <a href="#bespoke-jewelry" class="text-white/90 hover:text-yellow-400 transition-all duration-300 text-sm lg:text-base font-medium tracking-wide hover:translate-y-[-2px] font-montserrat" onclick="smoothScroll('bespoke-jewelry')">BESPOKE JEWELRY</a>
+                <a href="#contact" class="text-white/90 hover:text-yellow-400 transition-all duration-300 text-sm lg:text-base font-medium tracking-wide hover:translate-y-[-2px] font-montserrat" onclick="smoothScroll('contact')">CONTACT</a>
+                <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-6 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat">SHOP NOW</button>
             </div>
             
             <!-- Mobile Hamburger -->
-            <div class="lg:hidden hamburger" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="lg:hidden flex flex-col justify-between w-6 h-5 cursor-pointer z-[1001] hamburger" onclick="toggleMobileMenu()">
+                <span class="block h-0.5 w-full bg-yellow-500 rounded-full transition-all duration-300"></span>
+                <span class="block h-0.5 w-full bg-yellow-500 rounded-full transition-all duration-300"></span>
+                <span class="block h-0.5 w-full bg-yellow-500 rounded-full transition-all duration-300"></span>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#collections" class="nav-link" onclick="smoothScrollAndClose('collections')">COLLECTIONS</a>
-            <a href="#our-story" class="nav-link" onclick="smoothScrollAndClose('our-story')">OUR STORY</a>
-            <a href="#bespoke-jewelry" class="nav-link" onclick="smoothScrollAndClose('bespoke-jewelry')">BESPOKE JEWELRY</a>
-            <a href="#contact" class="nav-link" onclick="smoothScrollAndClose('contact')">CONTACT</a>
-            <button class="shop-button">SHOP NOW</button>
+        <div class="fixed top-0 left-[-100%] w-4/5 max-w-xs h-screen bg-black/95 backdrop-blur-xl z-[1000] transition-all duration-300 pt-20 px-5 overflow-y-auto mobile-menu" id="mobileMenu">
+            <a href="#collections" class="block w-full py-4 text-base text-white font-montserrat border-b border-yellow-500/20 mb-0 hover:bg-yellow-500/10 transition-all duration-300" onclick="smoothScrollAndClose('collections')">COLLECTIONS</a>
+            <a href="#our-story" class="block w-full py-4 text-base text-white font-montserrat border-b border-yellow-500/20 mb-0 hover:bg-yellow-500/10 transition-all duration-300" onclick="smoothScrollAndClose('our-story')">OUR STORY</a>
+            <a href="#bespoke-jewelry" class="block w-full py-4 text-base text-white font-montserrat border-b border-yellow-500/20 mb-0 hover:bg-yellow-500/10 transition-all duration-300" onclick="smoothScrollAndClose('bespoke-jewelry')">BESPOKE JEWELRY</a>
+            <a href="#contact" class="block w-full py-4 text-base text-white font-montserrat border-b border-yellow-500/20 mb-0 hover:bg-yellow-500/10 transition-all duration-300" onclick="smoothScrollAndClose('contact')">CONTACT</a>
+            <button class="block w-full mt-5 py-3 text-sm text-white bg-yellow-500/20 border border-yellow-500/40 rounded-full text-center font-montserrat hover:bg-yellow-500/30 hover:text-black transition-all duration-300">SHOP NOW</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-new-bg min-h-screen flex items-center justify-start text-white relative px-4 lg:px-8 pt-20 lg:pt-0">
-        <div class="hero-overlay-card p-6 lg:p-16 ml-0 lg:ml-16 rounded-2xl max-w-full lg:max-w-lg mx-4 lg:mx-0">
-            <h1 class="luxury-headline text-2xl lg:text-5xl leading-tight mb-4 lg:mb-6 text-center lg:text-left">
+    <section class="min-h-screen flex items-center justify-start text-white relative px-4 lg:px-8 pt-20 lg:pt-0 bg-gradient-to-b from-black/60 via-black/80 to-black bg-cover bg-center bg-fixed" style="background-image: url('img/hero.jpeg')">
+        <div class="bg-black/40 backdrop-blur-xl rounded-2xl p-6 lg:p-16 ml-0 lg:ml-16 max-w-full lg:max-w-lg mx-4 lg:mx-0 border border-yellow-500/30 shadow-2xl">
+            <h1 class="text-3xl lg:text-6xl font-cinzel font-semibold tracking-[0.15em] uppercase leading-tight mb-4 lg:mb-6 text-center lg:text-left text-white">
                 TIMELESS RADIANCE
             </h1>
-            <p class="text-sm lg:text-lg mb-6 lg:mb-10 opacity-90 leading-relaxed text-center lg:text-left">
+            <p class="text-sm lg:text-lg mb-6 lg:mb-10 text-white/90 leading-relaxed text-center lg:text-left font-montserrat font-light">
                 Experience the art of exquisite craftsmanship. Curated jewelry designed to celebrate your unique story with elegance and grace.
             </p>
             <div class="text-center lg:text-left">
-                <button class="cta-button px-6 py-3 lg:px-8 lg:py-4 rounded-lg font-bold text-sm lg:text-lg uppercase tracking-wider" onclick="smoothScroll('collections')">
+                <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg font-bold text-sm lg:text-lg uppercase tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat" onclick="smoothScroll('collections')">
                     EXPLORE THE COLLECTION
                 </button>
             </div>
@@ -1059,29 +1041,29 @@
     </section>
  
     <!-- The Collection Section -->
-    <section id="collections" class="min-h-screen py-16 lg:py-20 px-4 lg:px-8">
+    <section id="collections" class="min-h-screen py-12 lg:py-20 px-4 lg:px-8 bg-black">
         <div class="max-w-7xl mx-auto">
-            <h2 class="luxury-headline text-3xl lg:text-5xl text-center mb-12 lg:mb-20">The Collection</h2>
+            <h2 class="text-3xl lg:text-5xl font-cinzel font-semibold tracking-[0.15em] uppercase text-center mb-8 lg:mb-16 text-white">The Collection</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-                <div class="collection-card">
-                    <img src="img/main1.jpeg" alt="Timeless Necklaces">
-                    <div class="collection-overlay">
-                        <h3 class="collection-title text-lg lg:text-2xl">Timeless Necklaces</h3>
-                        <button class="select-button text-xs lg:text-sm" onclick="toggleSelection(this)">Select Now</button>
+                <div class="relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl border border-yellow-500/20 group">
+                    <img src="img/main1.jpeg" alt="Timeless Necklaces" class="w-full h-64 lg:h-96 object-cover transition-transform duration-600 group-hover:scale-110 brightness-90 group-hover:brightness-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center backdrop-blur-sm group-hover:from-black/95">
+                        <h3 class="text-lg lg:text-2xl font-cinzel font-semibold tracking-[0.15em] uppercase text-white mb-4 lg:mb-4 transition-all duration-400 group-hover:text-yellow-400 group-hover:translate-y-[-2px] text-center">Timeless Necklaces</h3>
+                        <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-5 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat" onclick="toggleSelection(this)">Select Now</button>
                     </div>
                 </div>
-                <div class="collection-card">
-                    <img src="img/main2.jpeg" alt="Iconic Bracelets">
-                    <div class="collection-overlay">
-                        <h3 class="collection-title text-lg lg:text-2xl">Iconic Bracelets</h3>
-                        <button class="select-button text-xs lg:text-sm" onclick="toggleSelection(this)">Select Now</button>
+                <div class="relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl border border-yellow-500/20 group">
+                    <img src="img/main2.jpeg" alt="Iconic Bracelets" class="w-full h-64 lg:h-96 object-cover transition-transform duration-600 group-hover:scale-110 brightness-90 group-hover:brightness-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center backdrop-blur-sm group-hover:from-black/95">
+                        <h3 class="text-lg lg:text-2xl font-cinzel font-semibold tracking-[0.15em] uppercase text-white mb-4 lg:mb-4 transition-all duration-400 group-hover:text-yellow-400 group-hover:translate-y-[-2px] text-center">Iconic Bracelets</h3>
+                        <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-5 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat" onclick="toggleSelection(this)">Select Now</button>
                     </div>
                 </div>
-                <div class="collection-card">
-                    <img src="img/grid.jpeg" alt="Royal Rings">
-                    <div class="collection-overlay">
-                        <h3 class="collection-title text-lg lg:text-2xl">Royal Rings</h3>
-                        <button class="select-button text-xs lg:text-sm" onclick="toggleSelection(this)">Select Now</button>
+                <div class="relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl border border-yellow-500/20 group">
+                    <img src="img/grid.jpeg" alt="Royal Rings" class="w-full h-64 lg:h-96 object-cover transition-transform duration-600 group-hover:scale-110 brightness-90 group-hover:brightness-110">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent p-5 lg:p-8 flex flex-col justify-center items-center backdrop-blur-sm group-hover:from-black/95">
+                        <h3 class="text-lg lg:text-2xl font-cinzel font-semibold tracking-[0.15em] uppercase text-white mb-4 lg:mb-4 transition-all duration-400 group-hover:text-yellow-400 group-hover:translate-y-[-2px] text-center">Royal Rings</h3>
+                        <button class="bg-yellow-500/20 border border-yellow-500/40 text-white px-4 lg:px-5 py-2 rounded-full text-xs lg:text-sm font-medium tracking-wider hover:bg-yellow-500/30 hover:text-black hover:translate-y-[-2px] hover:shadow-lg hover:border-yellow-500 transition-all duration-300 font-montserrat" onclick="toggleSelection(this)">Select Now</button>
                     </div>
                 </div>
             </div>
@@ -1089,81 +1071,82 @@
     </section>
 
     <!-- Bespoke Jewelry Section -->
-    <section id="bespoke-jewelry" class="bespoke-section min-h-screen py-16 lg:py-0">
-        <div class="max-w-7xl mx-auto h-full flex flex-col lg:flex-row items-center justify-between px-4 lg:px-8">
-            <div class="bespoke-content w-full lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
-                <div class="eyebrow-heading text-xs lg:text-sm">CRAFTED FOR YOU</div>
-                <h2 class="bespoke-headline text-2xl lg:text-4xl">YOUR VISION, OUR MASTERPIECE</h2>
-                <div class="gold-divider"></div>
-                <p class="bespoke-description text-sm lg:text-lg">
+    <section id="bespoke-jewelry" class="min-h-screen bg-black relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/10 via-transparent to-transparent opacity-60 animate-pulse"></div>
+        <div class="max-w-7xl mx-auto h-full flex flex-col lg:flex-row items-center justify-between px-4 lg:px-8 relative z-10">
+            <div class="w-full lg:w-1/2 text-center lg:text-left order-2 lg:order-1 space-y-6 lg:space-y-8">
+                <div class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.25em] uppercase text-yellow-400 animate-pulse">CRAFTED FOR YOU</div>
+                <h2 class="text-2xl lg:text-4xl font-cormorant font-light tracking-[0.1em] uppercase text-white leading-tight mb-6 lg:mb-8">YOUR VISION, OUR MASTERPIECE</h2>
+                <div class="w-12 h-px bg-yellow-400 mx-auto lg:mx-0 mb-6 lg:mb-8"></div>
+                <p class="text-sm lg:text-lg font-montserrat font-light text-white/90 leading-relaxed mb-8 lg:mb-12">
                     Our master artisans transform your dreams into reality through meticulous handcrafting and exceptional attention to detail. Each bespoke piece tells your unique story with unparalleled artistry.
                 </p>
-                <div class="process-icons justify-center lg:justify-start">
-                    <div class="process-icon" style="--delay: 0">
-                        <i data-lucide="pen-tool"></i>
-                        <span class="text-xs lg:text-sm">Sketch</span>
+                <div class="flex justify-center lg:justify-start space-x-6 lg:space-x-10 mb-8 lg:mb-12">
+                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                        <i data-lucide="pen-tool" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white group-hover:animate-bounce" style="animation-delay: 0s;"></i>
+                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Sketch</span>
                     </div>
-                    <div class="process-icon" style="--delay: 1">
-                        <i data-lucide="diamond"></i>
-                        <span class="text-xs lg:text-sm">Selection</span>
+                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                        <i data-lucide="diamond" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white group-hover:animate-bounce" style="animation-delay: 0.5s;"></i>
+                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Selection</span>
                     </div>
-                    <div class="process-icon" style="--delay: 2">
-                        <i data-lucide="hammer"></i>
-                        <span class="text-xs lg:text-sm">Craft</span>
+                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                        <i data-lucide="hammer" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white group-hover:animate-bounce" style="animation-delay: 1s;"></i>
+                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Craft</span>
                     </div>
                 </div>
-                <button class="journey-button text-sm lg:text-base">START YOUR JOURNEY</button>
+                <button class="bg-transparent border border-yellow-400 text-yellow-400 px-6 lg:px-10 py-3 lg:py-4 text-sm lg:text-base font-montserrat font-medium tracking-[0.15em] uppercase cursor-pointer transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:translate-y-[-2px] hover:shadow-xl hover:shadow-yellow-400/30 relative overflow-hidden group">START YOUR JOURNEY</button>
             </div>
-            <div class="bespoke-image w-full lg:w-1/2 order-1 lg:order-2">
-                <img src="img/grid1.jpeg" alt="Bespoke Jewelry">
+            <div class="w-full lg:w-1/2 order-1 lg:order-2 relative overflow-hidden">
+                <img src="img/grid1.jpeg" alt="Bespoke Jewelry" class="w-full h-64 lg:h-screen object-cover animate-float" style="animation: float 6s ease-in-out infinite;">
             </div>
         </div>
     </section>
 
     <!-- Our Story Section -->
-    <section id="our-story" class="story-section py-16 lg:py-20 px-4 lg:px-8">
-        <div class="story-container max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20">
-            <div class="story-image order-2 lg:order-1">
-                <img src="img/stoey.jpeg" alt="Master Jeweler at Work">
+    <section id="our-story" class="py-16 lg:py-20 px-4 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+            <div class="order-2 lg:order-1 relative overflow-hidden rounded-2xl shadow-2xl">
+                <img src="img/stoey.jpeg" alt="Master Jeweler at Work" class="w-full h-64 lg:h-96 object-cover transition-transform duration-700 hover:scale-105">
             </div>
-            <div class="story-content order-1 lg:order-2 text-center lg:text-left">
-                <h2 class="story-headline text-2xl lg:text-4xl mb-6 lg:mb-10">THE HEART OF BIJOUTINE</h2>
-                <p class="story-text text-sm lg:text-lg mb-4 lg:mb-6">
-                    For three generations, the BIJOUTINE family has woven dreams into reality through the ancient art of jewelry crafting. Our master jeweler's hands tell stories of love, legacy, and devotion in every precious piece they create.
+            <div class="order-1 lg:order-2 space-y-6 lg:space-y-8">
+                <h2 class="text-2xl lg:text-4xl font-cormorant font-light tracking-[0.1em] uppercase text-white leading-tight mb-6 lg:mb-10 text-center lg:text-left">THE HEART OF BIJOUTINE</h2>
+                <p class="text-sm lg:text-lg font-montserrat font-light text-white/90 leading-relaxed mb-6 text-center lg:text-left">
+                    For three generations, BIJOUTINE family has woven dreams into reality through the ancient art of jewelry crafting. Our master jeweler's hands tell stories of love, legacy, and devotion in every precious piece they create.
                 </p>
-                <p class="story-text text-sm lg:text-lg mb-4 lg:mb-6">
+                <p class="text-sm lg:text-lg font-montserrat font-light text-white/90 leading-relaxed mb-6 text-center lg:text-left">
                     Each creation begins with a vision - your unique story transformed into wearable art. We believe that true luxury lies not in the materials we use, but in the passion and precision with which we craft every detail.
                 </p>
-                <p class="story-text text-sm lg:text-lg mb-6 lg:mb-8">
+                <p class="text-sm lg:text-lg font-montserrat font-light text-white/90 leading-relaxed mb-8 text-center lg:text-left">
                     From the first sketch to the final polish, our commitment to excellence ensures that your BIJOUTINE piece will become tomorrow's heirloom, carrying forward the legacy of craftsmanship and the essence of your personal journey.
                 </p>
-                <div class="story-signature text-lg lg:text-xl">— BIJOUTINE</div>
+                <div class="text-lg lg:text-xl font-cormorant font-light italic text-yellow-400 text-center lg:text-left">— BIJOUTINE</div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="story-section py-8 lg:py-12 px-4 lg:px-8">
-        <div class="story-container max-w-7xl mx-auto">
-            <div class="hero-overlay-card p-6 lg:p-12 mx-4 lg:mx-0 rounded-2xl text-center">
-                <div class="prominent-name text-lg lg:text-2xl mb-3 lg:mb-4">BIJOUTINE</div>
-                <h2 class="story-headline text-xl lg:text-3xl mb-4 lg:mb-6" style="letter-spacing: 4px; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);">CONTACT</h2>
-                <div class="gold-divider mx-auto lg:mx-0"></div>
-                <p class="story-text text-sm lg:text-base mb-6 lg:mb-8" style="line-height: 1.8;">
+    <section id="contact" class="py-12 lg:py-16 px-4 lg:px-8 bg-gray-900">
+        <div class="max-w-4xl lg:max-w-7xl mx-auto">
+            <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-6 lg:p-12 mx-4 lg:mx-0 border border-yellow-500/20 shadow-2xl text-center">
+                <div class="text-lg lg:text-2xl font-cinzel font-semibold tracking-[0.15em] uppercase text-white mb-4 lg:mb-6">BIJOUTINE</div>
+                <h2 class="text-xl lg:text-3xl font-cormorant font-light tracking-[0.1em] uppercase text-white mb-6 lg:mb-10 text-center" style="text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);">CONTACT</h2>
+                <div class="w-12 h-px bg-yellow-400 mx-auto mb-6 lg:mb-12"></div>
+                <p class="text-sm lg:text-base font-montserrat font-light text-white/90 leading-relaxed mb-8 lg:mb-12 text-center lg:text-left">
                     We invite you to experience the BIJOUTINE difference. Whether you seek to begin your bespoke journey or explore our collections, our master artisans are ready to transform your vision into timeless elegance.
                 </p>
-                <div class="process-icons justify-center">
-                    <div class="process-icon" style="--delay: 0">
-                        <i data-lucide="map-pin"></i>
-                        <span class="text-xs lg:text-sm">Visit Atelier</span>
+                <div class="flex justify-center space-x-6 lg:space-x-10">
+                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                        <i data-lucide="map-pin" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white"></i>
+                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Visit Atelier</span>
                     </div>
-                    <div class="process-icon" style="--delay: 1">
-                        <i data-lucide="phone"></i>
-                        <span class="text-xs lg:text-sm">Private Consultation</span>
+                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                        <i data-lucide="phone" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white"></i>
+                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Private Consultation</span>
                     </div>
-                    <div class="process-icon" style="--delay: 2">
-                        <i data-lucide="mail"></i>
-                        <span class="text-xs lg:text-sm">Bespoke Inquiry</span>
+                    <div class="text-center group cursor-pointer transition-all duration-300 hover:translate-y-[-5px] hover:scale-110">
+                        <i data-lucide="mail" class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-400 mb-2 lg:mb-3 transition-all duration-300 group-hover:text-white"></i>
+                        <span class="text-xs lg:text-sm font-montserrat font-medium tracking-[0.1em] uppercase text-white block">Bespoke Inquiry</span>
                     </div>
                 </div>
             </div>
